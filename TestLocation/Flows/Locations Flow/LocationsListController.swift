@@ -1,0 +1,64 @@
+//
+//  LocationsListController.swift
+//  TestLocation
+//
+//  Created by Socratis Michaelides on 07/11/2018.
+//  Copyright © 2018 Socratis Michaelides. All rights reserved.
+//
+
+import Core
+
+final class LocationsListController: UIViewController, LocationsListView {
+	
+	//MARK: - Controller handlers
+  var onLocationSelect: ((Location) -> ())?
+  var onAddLocation: (() -> Void)?
+  
+  @IBAction func addItemButtonClicked(_ sender: UIBarButtonItem) { onAddLocation?() }
+  
+  @IBOutlet weak var tableView: UITableView!
+	
+	//mock locations datasource
+  var locations = [
+		Location(city: "New York", longitude: "-74.0059413", latitude: "40.7127837"),
+		Location(city: "Los Angeles", longitude: "-118.2436849", latitude: "34.0522342"),
+		Location(city: "Tokyo", longitude: "139.7514", latitude: "35.6850"),
+		Location(city: "São Paulo", longitude: "-46.6250", latitude: "-23.5587")
+		]
+	
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    title = "Select a location"
+		tableView.tableFooterView = UIView()
+		navigationItem.rightBarButtonItem = UIBarButtonItem(
+      barButtonSystemItem: .add,
+      target: self,
+      action: #selector(LocationsListController.addItemButtonClicked(_:))
+    )
+  }
+}
+
+extension LocationsListController: UITableViewDelegate, UITableViewDataSource {
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return locations.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    let location = locations[(indexPath as NSIndexPath).row]
+    cell.textLabel?.text = location.city
+    cell.detailTextLabel?.text = location.longitude
+    return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    onLocationSelect?(locations[(indexPath as NSIndexPath).row])
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
+}
