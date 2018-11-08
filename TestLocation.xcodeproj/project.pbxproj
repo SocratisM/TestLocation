@@ -386,7 +386,7 @@
 		71ABD4912192E6C300191EB9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				71ABD4252192E46C00191EB9 /* Location.swift */,
+				71DE0EDB219470F600BF8C16 /* Location */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,6 +457,14 @@
 				71ABD4AE2192F1F400191EB9 /* TabbarCoordinator.swift */,
 			);
 			path = "Tab Bar Flow";
+			sourceTree = "<group>";
+		};
+		71DE0EDB219470F600BF8C16 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				71ABD4252192E46C00191EB9 /* Location.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		71F753172191F45F004D151B = {

@@ -20,11 +20,17 @@ final class LocationsListController: UIViewController, LocationsListView {
 	
 	//mock locations datasource
   var locations = [
-		Location(city: "New York", longitude: "-74.0059413", latitude: "40.7127837"),
-		Location(city: "Los Angeles", longitude: "-118.2436849", latitude: "34.0522342"),
-		Location(city: "Tokyo", longitude: "139.7514", latitude: "35.6850"),
-		Location(city: "São Paulo", longitude: "-46.6250", latitude: "-23.5587")
-		]
+		Location(place: "New York", longitude: "-74.0059413", latitude: "40.7127837"),
+		Location(place: "Los Angeles", longitude: "-118.2436849", latitude: "34.0522342"),
+		Location(place: "Tokyo", longitude: "139.7514", latitude: "35.6850"),
+		Location(place: "São Paulo", longitude: "-46.6250", latitude: "-23.5587"),
+        Location(place: "Rijksmuseum"),
+        Location(place: "Anne Frank House"),
+        Location(place: "Berlin Wall"),
+        Location(place: "White House"),
+        Location(place: "Nasa Headquarters"),
+        Location(place: "Apple Headquarters")
+        ]
 	
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -52,8 +58,7 @@ extension LocationsListController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     let location = locations[(indexPath as NSIndexPath).row]
-    cell.textLabel?.text = location.city
-    cell.detailTextLabel?.text = location.longitude
+    cell.textLabel?.text = location.place
     return cell
   }
   
