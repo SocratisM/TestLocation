@@ -41,7 +41,32 @@ private extension LocationsCoordinator {
 	}
 	
 	private func openLocationInWiki(_ location: Location) {
-			// TODO
+		let locationBaseUrlStr = LocationURL.scheme
+			+ "://"
+			+ LocationURL.host
+       
+        var queryItems = [URLQueryItem]()
+        // Check for available coordinates
+        if let latitude = location.latitude, let longitude = location.longitude {
+            queryItems = [URLQueryItem(name: LocationURL.latitude, value: latitude), URLQueryItem(name: LocationURL.longitude, value: longitude)]
+        } else {
+            // Pass just the place
+            queryItems = [URLQueryItem(name: LocationURL.place, value: location.place)]
+        }
+
+		guard var urlComps = URLComponents(string: locationBaseUrlStr) else {
+			debugPrint("Invalid location base url")
+			return
+		}
+
+		urlComps.queryItems = queryItems
+		
+		guard let locationUrl = urlComps.url else {
+			debugPrint("Invalid location final url")
+			return
+		}
+        
+		router.openURL(url: locationUrl, completion: nil)
 	}
 	
 	private func runAddLocationFlow() {
