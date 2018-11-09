@@ -7,6 +7,7 @@
 //
 
 public protocol AddLocationView: BaseView {
+  var viewModel: AddLocationViewModel! { get set }
   var onHideButtonTap: (() -> Void)? { get set }
   var onCompleteAddLocation: ((Location) -> ())? { get set }
 }

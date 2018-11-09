@@ -27,14 +27,15 @@ final class AddLocationCoordinator: BaseCoordinator, AddLocationCoordinatorOutpu
 
 //MARK: - Run current flow's controllers
 private extension AddLocationCoordinator {
-	private func showAddLocation() {
-		let addLocationOutput = factory.makeAddLocationOutput()
-		addLocationOutput.onCompleteAddLocation = { [weak self] location in
-			self?.finishFlow?(location)
-		}
-		addLocationOutput.onHideButtonTap = { [weak self] in
-			self?.finishFlow?(nil)
-		}
-		router.setRootModule(addLocationOutput)
-	}
+  private func showAddLocation() {
+    let addLocationOutput = factory.makeAddLocationOutput()
+    addLocationOutput.viewModel = AddLocationViewModelConcrete(validator: LocationValidatorConcrete())
+    addLocationOutput.onCompleteAddLocation = { [weak self] location in
+      self?.finishFlow?(location)
+    }
+    addLocationOutput.onHideButtonTap = { [weak self] in
+      self?.finishFlow?(nil)
+    }
+    router.setRootModule(addLocationOutput)
+  }
 }
