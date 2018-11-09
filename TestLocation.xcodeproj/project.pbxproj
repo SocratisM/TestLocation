@@ -55,6 +55,7 @@
 		71F7532B2191F461004D151B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F7532A2191F461004D151B /* Assets.xcassets */; };
 		71F7532E2191F461004D151B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F7532C2191F461004D151B /* LaunchScreen.storyboard */; };
 		71F753392191F461004D151B /* TestLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F753382191F461004D151B /* TestLocationTests.swift */; };
+		71FFD0272195CC7100C701D9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 71FFD0262195CC7000C701D9 /* README.md */; };
 		AE65C9DA6904610AF7E7B3C3 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1997470D1F89DBEE6CD593EB /* Pods_Core.framework */; };
 		BFD2820C3FDF342299BB8A8A /* Pods_TestLocationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2D4A6DC3580C2A3F70D44E /* Pods_TestLocationTests.framework */; };
 		CDD8B42B2DE8CABDB37072C7 /* Pods_CoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811B5192F26F29C0372AAE96 /* Pods_CoreTests.framework */; };
@@ -165,6 +166,7 @@
 		71F753342191F461004D151B /* TestLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F753382191F461004D151B /* TestLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLocationTests.swift; sourceTree = "<group>"; };
 		71F7533A2191F461004D151B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71FFD0262195CC7000C701D9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77381875641049ED8CE55C4A /* Pods-CoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreTests/Pods-CoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		778FC2A933EF64A379C46E01 /* Pods_TestLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3E6BA636012BD4CACA8873 /* Pods-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Core/Pods-Core.debug.xcconfig"; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 		71F753172191F45F004D151B = {
 			isa = PBXGroup;
 			children = (
+				71FFD0262195CC7000C701D9 /* README.md */,
 				71F753222191F45F004D151B /* TestLocation */,
 				71F753372191F461004D151B /* TestLocationTests */,
 				71ABD3F22192E03F00191EB9 /* Core */,
@@ -758,6 +761,7 @@
 				71ABD4B32192F29A00191EB9 /* Main.storyboard in Resources */,
 				71DE0EEF2195C75500BF8C16 /* Localizable.strings in Resources */,
 				71F7532B2191F461004D151B /* Assets.xcassets in Resources */,
+				71FFD0272195CC7100C701D9 /* README.md in Resources */,
 				71ABD4872192E48200191EB9 /* AddLocation.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
