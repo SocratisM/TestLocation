@@ -36,7 +36,7 @@ final class LocationsListController: UIViewController, LocationsListView {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    title = "Select a location"
+    title = NSLocalizedString("select_location_title", comment: "")
 		tableView.tableFooterView = UIView()
 		navigationItem.rightBarButtonItem = UIBarButtonItem(
       barButtonSystemItem: .add,

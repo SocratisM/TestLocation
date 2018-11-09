@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  TestLocation
+
+  Created by Socratis Michaelides on 09/11/2018.
+  Copyright © 2018 Socratis Michaelides. All rights reserved.
+*/
+
+"add_location_title" = "Add location";
+"select_location_title" = "Select location";

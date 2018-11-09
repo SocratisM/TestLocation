@@ -33,7 +33,7 @@ final class AddLocationController: UIViewController, AddLocationView {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    title = "Add Location"
+    title = NSLocalizedString("add_location_title", comment: "")
     navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(AddLocationController.hideButtonClicked(_:)))
     
     setupBindings()
