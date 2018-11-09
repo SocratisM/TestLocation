@@ -13,6 +13,7 @@ final class LocationsListController: UIViewController, LocationsListView {
 	//MARK: - Controller handlers
   var onLocationSelect: ((Location) -> ())?
   var onAddLocation: (() -> Void)?
+  var onNewLocationAdded: ((Location) -> ())?
   
   @IBAction func addItemButtonClicked(_ sender: UIBarButtonItem) { onAddLocation?() }
   
@@ -24,13 +25,13 @@ final class LocationsListController: UIViewController, LocationsListView {
 		Location(place: "Los Angeles", longitude: "-118.2436849", latitude: "34.0522342"),
 		Location(place: "Tokyo", longitude: "139.7514", latitude: "35.6850"),
 		Location(place: "São Paulo", longitude: "-46.6250", latitude: "-23.5587"),
-        Location(place: "Rijksmuseum"),
-        Location(place: "Anne Frank House"),
-        Location(place: "Berlin Wall"),
-        Location(place: "White House"),
-        Location(place: "Nasa Headquarters"),
-        Location(place: "Apple Headquarters")
-        ]
+    Location(place: "Rijksmuseum"),
+    Location(place: "Anne Frank House"),
+    Location(place: "Berlin Wall"),
+    Location(place: "White House"),
+    Location(place: "Nasa Headquarters"),
+    Location(place: "Apple Headquarters")
+    ]
 	
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,6 +43,11 @@ final class LocationsListController: UIViewController, LocationsListView {
       target: self,
       action: #selector(LocationsListController.addItemButtonClicked(_:))
     )
+  }
+  
+  func onNewLocationAdded(location: Location) {
+    locations.append(location)
+    tableView.reloadData()
   }
 }
 

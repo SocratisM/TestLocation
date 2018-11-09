@@ -9,6 +9,7 @@
 public protocol LocationsListView: BaseView {
   var onLocationSelect: ((Location) -> ())? { get set }
   var onAddLocation: (() -> Void)? { get set }
+  func onNewLocationAdded(location: Location)
 }
 
 
