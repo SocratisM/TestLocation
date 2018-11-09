@@ -19,12 +19,98 @@
                     <view key="view" contentMode="scaleToFill" id="AKD-rU-Rsg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Wl-Sq-Ec1">
+                                <rect key="frame" x="69" y="40" width="236" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka1-Fr-BWR">
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter place " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Btm-gD-hO8">
+                                        <rect key="frame" x="0.0" y="40" width="236" height="30"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ZZP-8h-eU1" id="buR-dv-7gy"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcl-Tr-iOn" userLabel="Latitude">
+                                        <rect key="frame" x="0.0" y="80" width="236" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Latitude(Optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-Am-B1b" userLabel="Enter Latitude">
+                                        <rect key="frame" x="0.0" y="120" width="236" height="30"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ZZP-8h-eU1" id="hiH-WV-Nq2"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaM-xd-yq4" userLabel="Longitude">
+                                        <rect key="frame" x="0.0" y="160" width="236" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Longitude(Optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zF-21-wZh" userLabel="Enter Longitude">
+                                        <rect key="frame" x="0.0" y="200" width="236" height="30"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="location"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ZZP-8h-eU1" id="Fdk-le-z1G"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGP-fN-Sfl">
+                                <rect key="frame" x="69" y="293" width="236" height="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BN9-ru-dR3">
+                                <rect key="frame" x="69" y="347" width="236" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="q3A-Yi-ZHg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.82519035532994922" green="0.0055309087905760154" blue="0.067399134915879927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.62352941179999999" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Wl-Sq-Ec1" firstAttribute="leading" secondItem="AKD-rU-Rsg" secondAttribute="leading" constant="69" id="RkU-ti-BiU"/>
+                            <constraint firstItem="7Wl-Sq-Ec1" firstAttribute="top" secondItem="z6T-dI-9Nj" secondAttribute="bottom" constant="20" id="a5s-k9-LNC"/>
+                            <constraint firstAttribute="trailing" secondItem="gGP-fN-Sfl" secondAttribute="trailing" constant="70" id="aSP-Qu-GFm"/>
+                            <constraint firstItem="gGP-fN-Sfl" firstAttribute="top" secondItem="7Wl-Sq-Ec1" secondAttribute="bottom" constant="23" id="dpz-em-yKe"/>
+                            <constraint firstItem="gGP-fN-Sfl" firstAttribute="leading" secondItem="AKD-rU-Rsg" secondAttribute="leading" constant="69" id="fWQ-Jr-5Xt"/>
+                            <constraint firstItem="BN9-ru-dR3" firstAttribute="top" secondItem="gGP-fN-Sfl" secondAttribute="bottom" constant="19" id="goU-nE-zFy"/>
+                            <constraint firstItem="BN9-ru-dR3" firstAttribute="leading" secondItem="AKD-rU-Rsg" secondAttribute="leading" constant="69" id="gtt-wO-EA9"/>
+                            <constraint firstAttribute="trailing" secondItem="7Wl-Sq-Ec1" secondAttribute="trailing" constant="70" id="lR7-OX-uch"/>
+                            <constraint firstAttribute="trailing" secondItem="BN9-ru-dR3" secondAttribute="trailing" constant="70" id="nVH-Be-mxY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="doneButton" destination="gGP-fN-Sfl" id="ta6-34-fW2"/>
+                        <outlet property="errorLabel" destination="BN9-ru-dR3" id="I1X-D1-qMh"/>
+                        <outlet property="latitudeTextField" destination="WmT-Am-B1b" id="ZT9-Bx-evl"/>
+                        <outlet property="longitudeTextField" destination="6zF-21-wZh" id="1H4-KV-k0x"/>
+                        <outlet property="placeTextField" destination="Btm-gD-hO8" id="njW-pW-EEy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMM-7c-9JT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357" y="481"/>
+            <point key="canvasLocation" x="356" y="480.80959520239884"/>
         </scene>
     </scenes>
 </document>
