@@ -67,10 +67,10 @@ public class LocationValidatorConcrete: LocationValidatorType {
 }
 
 extension String  {
-  var isNumber: Bool {
+  public var isNumber: Bool {
     return !isEmpty && rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
   }
-  var isCoordinate: Bool {
-    return !isEmpty && (first == "-" || isNumber) && dropFirst().rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
+  public var isCoordinate: Bool {
+    return !isEmpty && (first == "-" || isNumber) && dropFirst().rangeOfCharacter(from: CharacterSet.decimalDigits.union(CharacterSet (charactersIn: ".")).inverted) == nil
   }
 }
