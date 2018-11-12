@@ -71,7 +71,7 @@ fileprivate extension AddLocationViewModelConcrete {
       return self.validator.validate(input: LocationInputType.place($0 ?? ""))
     }
     let placeError = placeValidation.map { [unowned self] str in
-      return self.validator.error(input: LocationInputType.place(str ?? ""))
+      return self.validator.error(input: LocationInputType.place(str ?? ""))?.rawValue
     }
     
     placeError.bind(to: self.errorValue) >>> bag
@@ -85,7 +85,7 @@ fileprivate extension AddLocationViewModelConcrete {
       return self.validator.validate(input: LocationInputType.longitude($0 ?? ""))
     }
     let longitudeError = longitudeValidation.map { [unowned self] str in
-      return self.validator.error(input: LocationInputType.longitude(str ?? ""))
+      return self.validator.error(input: LocationInputType.longitude(str ?? ""))?.rawValue
     }
     
     longitudeError.bind(to: self.errorValue) >>> bag
@@ -99,7 +99,7 @@ fileprivate extension AddLocationViewModelConcrete {
       return self.validator.validate(input: LocationInputType.longitude($0 ?? ""))
     }
     let latitudeError = latitudeValidation.map { [unowned self] str in
-      return self.validator.error(input: LocationInputType.latitude(str ?? ""))
+      return self.validator.error(input: LocationInputType.latitude(str ?? ""))?.rawValue
     }
     
     latitudeError.bind(to: self.errorValue) >>> bag

@@ -8,6 +8,14 @@
 
 import Foundation
 
+public enum LocationError: String {
+  case placeCharactersTooShort = "Place should be at least 3 characters long"
+  case placeIsNumber = "Place should not be a number"
+  case placeIsEmpty = "Place should not be empty"
+  case longitudeWrong = "Longitude should be a coordinate"
+  case latitudeWrong = "Latitude should be a coordinate"
+}
+
 public enum LocationInputType {
   case place(String)
   case longitude(String)
@@ -16,7 +24,7 @@ public enum LocationInputType {
 
 public protocol LocationValidatorType {
   func validate(input: LocationInputType) -> Bool
-  func error(input: LocationInputType) -> String?
+  func error(input: LocationInputType) -> LocationError?
   init()
 }
 
@@ -28,29 +36,29 @@ public class LocationValidatorConcrete: LocationValidatorType {
     return error(input: input) == nil
   }
   
-  public func error(input: LocationInputType) -> String? {
+  public func error(input: LocationInputType) -> LocationError? {
     switch input {
     case .place(let placeValue):
       // Basic place validation
       guard placeValue.isEmpty else {
         guard !placeValue.isNumber else {
-          return "Place should not be a number"
+          return LocationError.placeIsNumber
         }
-        return placeValue.count >= 3 ? nil : "Place should be at least 3 characters long"
+        return placeValue.count >= 3 ? nil : LocationError.placeCharactersTooShort
       }
-      return placeValue.isEmpty ? "Place should not be empty" : nil
+      return placeValue.isEmpty ? LocationError.placeIsEmpty : nil
     case .longitude(let longitudeValue):
       // Proper longitude validations later - This is a test
       if !longitudeValue.isEmpty {
         guard longitudeValue.isCoordinate else {
-          return "Longitude should be a coordinate"
+          return LocationError.longitudeWrong
         }
       }
     case .latitude(let latitudeValue):
       // Proper latitude validations later - This is a test
       if !latitudeValue.isEmpty {
         guard latitudeValue.isCoordinate else {
-          return "Longitude should be a coordinate"
+          return LocationError.latitudeWrong
         }
       }
     }
