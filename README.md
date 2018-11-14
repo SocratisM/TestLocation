@@ -23,3 +23,6 @@ Assuming you have Xcode and Ruby installed:
 * For any technical questions you can contact me at:
 - socratis.michaelides@agap2.nl
 - 0615228517
+
+# TestLocation
+iOS example written in Swift 4.2. It does deep linking to the wiki-ios app passing a location.
