@@ -52,6 +52,7 @@
 		71DE0EE52194856200BF8C16 /* LocationValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE0EDF21947AE500BF8C16 /* LocationValidator.swift */; };
 		71DE0EED21949D0700BF8C16 /* RxUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE0EEC21949D0700BF8C16 /* RxUtils.swift */; };
 		71DE0EEF2195C75500BF8C16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71DE0EEE2195C75500BF8C16 /* Localizable.strings */; };
+		71F7206921A5A14D00C0A3D8 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F7206821A5A14D00C0A3D8 /* CustomError.swift */; };
 		71F753242191F460004D151B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F753232191F460004D151B /* AppDelegate.swift */; };
 		71F7532B2191F461004D151B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F7532A2191F461004D151B /* Assets.xcassets */; };
 		71F7532E2191F461004D151B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F7532C2191F461004D151B /* LaunchScreen.storyboard */; };
@@ -169,6 +170,7 @@
 		71DE0EE22194851200BF8C16 /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
 		71DE0EEC21949D0700BF8C16 /* RxUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUtils.swift; sourceTree = "<group>"; };
 		71DE0EEE2195C75500BF8C16 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		71F7206821A5A14D00C0A3D8 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		71F753202191F45F004D151B /* TestLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F753232191F460004D151B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71F7532A2191F461004D151B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 		71ABD4892192E61300191EB9 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				71F7206721A5A13F00C0A3D8 /* Error */,
 				71ABD4A52192EA7F00191EB9 /* StoryboardTypes */,
 				71ABD4952192E7BA00191EB9 /* FactoryTypes */,
 				71ABD4912192E6C300191EB9 /* Models */,
@@ -565,6 +568,14 @@
 				71DE0EDF21947AE500BF8C16 /* LocationValidator.swift */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		71F7206721A5A13F00C0A3D8 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				71F7206821A5A14D00C0A3D8 /* CustomError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		71F753172191F45F004D151B = {
@@ -1061,6 +1072,7 @@
 				71ABD49D2192E83D00191EB9 /* LocationsModuleFactory.swift in Sources */,
 				71ABD49F2192E84700191EB9 /* OnboardingModuleFactory.swift in Sources */,
 				71ABD4972192E7E800191EB9 /* Location.swift in Sources */,
+				71F7206921A5A14D00C0A3D8 /* CustomError.swift in Sources */,
 				71ABD4962192E7E400191EB9 /* CoordinatorFactory.swift in Sources */,
 				71ABD4A12192E9AA00191EB9 /* AddLocationModuleFactory.swift in Sources */,
 			);

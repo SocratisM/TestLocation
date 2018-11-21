@@ -76,7 +76,13 @@ final public class RouterConcrete: NSObject, Router {
     rootController?.setViewControllers([controller], animated: false)
     rootController?.isNavigationBarHidden = hideBar
   }
-  
+	
+  public func present(error: CustomError) {
+    let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+    present(alert, animated: true)
+  }
+	
   public func popToRootModule(animated: Bool) {
     if let controllers = rootController?.popToRootViewController(animated: animated) {
       controllers.forEach { controller in
@@ -90,6 +96,10 @@ final public class RouterConcrete: NSObject, Router {
     completion()
     completions.removeValue(forKey: controller)
   }
+	
+	public func canOpenURL(url: URL) -> Bool {
+		return UIApplication.shared.canOpenURL(url)
+	}
 	
 	public func openURL(url: URL, completion: ((Bool) -> ())? = nil) {
 		UIApplication.shared.open(url, options: [:], completionHandler: completion)

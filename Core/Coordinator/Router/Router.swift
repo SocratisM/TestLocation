@@ -7,8 +7,10 @@
 //
 
 public protocol Router: Presentable {
-		func openURL(url: URL, completion: ((Bool) -> Void)?)
-	
+    func openURL(url: URL, completion: ((Bool) -> Void)?)
+    func canOpenURL(url: URL) -> Bool
+  
+    func present(error: CustomError) 
     func present(_ module: Presentable?)
     func present(_ module: Presentable?, animated: Bool)
     

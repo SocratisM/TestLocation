@@ -8,3 +8,6 @@
 
 "add_location_title" = "Add location";
 "select_location_title" = "Select location";
+
+// Errors
+"cant_open_wiki_url" = "The wikipedia app seems to not be installed. Please install it to launch this location url in the wikipedia app.";

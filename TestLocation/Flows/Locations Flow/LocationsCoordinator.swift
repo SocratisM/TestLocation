@@ -66,7 +66,11 @@ private extension LocationsCoordinator {
       return
     }
     
-    router.openURL(url: locationUrl, completion: nil)
+    if router.canOpenURL(url: locationUrl) {
+      router.openURL(url: locationUrl, completion: nil)
+    } else {
+      router.present(error: CustomError.missingWikiURLScheme)
+    }
   }
   
   private func runAddLocationFlow(with parent: LocationsListView) {
