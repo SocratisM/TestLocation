@@ -1,4 +1,4 @@
-# TestLocation - Socratis Michaelides - Agap2IT
+# TestLocation - Socratis Michaelides
 
 ## Before testing this app you must:
 
